@@ -1,0 +1,187 @@
+.btn-toggle-nav{
+    display: none;
+}
+
+.navbar-aside{
+    display: block;
+    position: sticky;
+    left: 0;
+    top: 40px;
+    max-width: 250px;
+    z-index: 2;
+    margin: auto;
+}
+
+.brand-logo{
+    max-width: 250px;
+    display: block;
+    margin: auto;
+}
+
+.task-section{
+    padding:0 1rem;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #E2E2E2;
+    overflow-x: hidden;
+    height: auto;
+    max-height: 475px;
+}
+
+.container-list{
+    list-style: none;
+    padding: 0;
+    transition: 0.3s ;
+}
+
+.list{
+    margin: 1rem 0;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid transparent;
+}
+
+.toggle-expand-list{
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding-left: 1.6rem;
+}
+
+.list-stack-3{
+    padding-left: 2rem;
+}
+
+.icon-list{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+}
+
+.file-icon{
+    margin-top: -0.125rem;
+    left: 0.31rem;
+}
+
+.icon-list > svg{
+    transition: 0.3s;
+}
+
+.file-icon > svg{
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.task-title{
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #2F3542;
+    display: block;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+/* Nested List */
+
+.sub-list,.sub-sub-list{
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.sub-list,.sub-sub-list{
+    margin: 0 0 0 1.2rem;
+}
+
+.sub-list > li , .sub-sub-list > li{
+   padding: 0.6rem 0 0;
+}
+
+
+/* Toggle expand list click */
+
+.list-selected{
+    padding: 0.7rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #E2E2E2;
+}
+
+.list-expand{
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.icon-rotate{
+    transform: rotate(90deg);
+}
+
+
+
+
+@media screen and (max-width:768px) {
+
+    .container-aside{
+        height: 0;
+    }
+
+    .btn-toggle-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        z-index: 99;
+      
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        
+        cursor: pointer;
+      }
+
+    .navbar-aside{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        height: 100%;
+        background-color: #FFFFFF;
+        display: none;
+        flex-direction: column;
+    }
+
+    #toggle-aside-mobile:checked ~ aside{
+        display: flex;
+    }
+
+    .brand-logo{
+        max-width: 210px;
+        display: block;
+    }
+
+    .task-section{
+        background-color: transparent;
+        max-height: 100%;
+        height: 100%;
+        padding: 1rem 0;
+        border: transparent;
+        border-radius: 0;
+    }
+
+    .list-selected{
+        padding: 0.7rem 0.5rem;
+        border-radius: 0px;
+    }
+}
